@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "edu.ewubd.smartmess"
+    namespace = "edu.ewubd.smartmessMN"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "edu.ewubd.smartmess"
+        applicationId = "edu.ewubd.smartmessMN"
         minSdk = 26
         targetSdk = 36
         versionCode = 1
@@ -46,18 +46,14 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-    implementation(platform("com.google.firebase:firebase-bom:34.6.0"))
+    implementation(platform("com.google.firebase:firebase-bom:34.7.0"))
+    implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-auth")
-    implementation("com.google.firebase:firebase-firestore")
-    implementation("com.google.firebase:firebase-database")
-    implementation("com.google.android.gms:play-services-auth:21.1.0")
     implementation("com.facebook.android:facebook-login:16.3.0")
-    implementation("androidx.credentials:credentials:1.5.0")
-    implementation("androidx.credentials:credentials-play-services-auth:1.5.0")
-    implementation("com.google.android.libraries.identity.googleid:googleid:1.1.1")
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.ext.junit)
-    androidTestImplementation(libs.espresso.core)
+    implementation(libs.credentials)
+    implementation(libs.credentials.play.services.auth)
+    implementation(libs.googleid)
+
 
 
 }

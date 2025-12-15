@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1062166616176",
+    "project_id": "smartmess-93786",
+    "storage_bucket": "smartmess-93786.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1062166616176:android:b380da1be09f29ae4dbcb5",
+        "android_client_info": {
+          "package_name": "edu.ewubd.smartmessMN"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQtXsXqa_U0cVD6bTurdiOu1h_PQGgDuc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

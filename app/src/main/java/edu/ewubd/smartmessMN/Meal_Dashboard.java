@@ -1,4 +1,4 @@
-package edu.ewubd.smartmess;
+package edu.ewubd.smartmessMN;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;

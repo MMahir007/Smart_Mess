@@ -1,13 +1,9 @@
-package edu.ewubd.smartmess;
+package edu.ewubd.smartmessMN;
 
 import android.os.Bundle;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class Expense_List extends AppCompatActivity {
     private TextView tvTotalAmounts;

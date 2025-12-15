@@ -1,4 +1,4 @@
-package edu.ewubd.smartmess;
+package edu.ewubd.smartmessMN;
 
 import org.junit.Test;
 
