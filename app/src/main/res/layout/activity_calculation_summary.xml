@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Calculation_Summary"
+    android:orientation="vertical"
+    android:background="@color/beige">
+
+    <!-- Top title bar -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Monthly Calculation"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textColor="@color/dark_green"
+        android:background="@color/beige" />
+
+    <!-- Main content area -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@color/light_cream"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:padding="16dp">
+
+        <!-- Top summary cards (Total Expenses + Meal Rate) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="@color/beige"
+                android:padding="12dp"
+                android:layout_marginEnd="6dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Expenses"
+                    android:textSize="12sp"
+                    android:textColor="@color/dark_green" />
+
+                <TextView
+                    android:id="@+id/total_expenses"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TK.200"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_green"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="@color/beige"
+                android:padding="12dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="6dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Meal Rate"
+                    android:textSize="12sp"
+                    android:textColor="@color/dark_green" />
+
+                <TextView
+                    android:id="@+id/totalrate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tk.40"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/dark_green"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Member Bills title band -->
+        <LinearLayout
+            android:id="@+id/totalBands"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/orange_700"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center_vertical|start">
+
+                <TextView
+                    android:id="@+id/tvTotalExpense"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Member Bills"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="@color/dark_green" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Member Bills header row -->
+        <LinearLayout
+            android:id="@+id/headerRows"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:orientation="horizontal"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:background="@color/soft_brown"
+            android:gravity="center_vertical"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="Member Name"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:paddingStart="8dp"
+                android:textColor="@color/dark_green" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="Total Meals"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:textColor="@color/dark_green" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="Total Meal Amount"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:paddingEnd="8dp"
+                android:textColor="@color/dark_green" />
+        </LinearLayout>
+
+        <!-- Member Bills list -->
+        <ListView
+            android:id="@+id/lvExpense"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/light_cream"
+            android:dividerHeight="1dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" />
+
+        <!-- ================= Expense Breakdown card (NEW) ================= -->
+        <LinearLayout
+            android:id="@+id/expenseBreakdownCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/soft_brown"
+            android:padding="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Expense Breakdown"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/dark_green"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Row 1: Rice and vegetables -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/light_cream"
+                android:padding="12dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical">
+
+                <!-- Left side: title + subtitle -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rice and vegetables"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:textColor="@color/dark_green" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="groceries"
+                        android:textSize="12sp"
+                        android:textColor="@color/dark_green" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12/5/2025"
+                        android:textSize="12sp"
+                        android:textColor="@color/dark_green" />
+                </LinearLayout>
+
+                <!-- Right side: amount -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$150.00"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:textColor="@color/dark_green" />
+            </LinearLayout>
+
+            <!-- Row 2: Electricity bill -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/light_cream"
+                android:padding="12dp"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Electricity bill"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:textColor="@color/dark_green" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="utilities"
+                        android:textSize="12sp"
+                        android:textColor="@color/dark_green" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12/3/2025"
+                        android:textSize="12sp"
+                        android:textColor="@color/dark_green" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$80.00"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:textColor="@color/dark_green" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <!-- ================================================================ -->
+
+    </LinearLayout>
+
+</LinearLayout>

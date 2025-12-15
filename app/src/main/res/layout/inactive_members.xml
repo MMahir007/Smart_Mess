@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/beige">
+
+    <!-- Top Title -->
+    <TextView
+        android:id="@+id/tv_section_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deactivated Members"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/dark_green"
+        android:layout_marginBottom="14dp" />
+
+    <!-- MEMBER BLOCK -->
+    <LinearLayout
+        android:id="@+id/member_block"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:elevation="4dp">
+
+        <!-- NAME + BADGE + REACTIVATE BUTTON -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <!-- NAME + EMAIL + DATES -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Alice Brown"
+                        android:textColor="@color/dark_green"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_status_badge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:padding="4dp"
+
+                        android:background="#FFEEEE"
+                        android:text="Inactive"
+                        android:textColor="#CC0000"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/dark_green"
+                    android:text="Email: alice@example.com"
+                    android:layout_marginTop="8dp" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:id="@+id/tv_join_date"
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/dark_green"
+                        android:layout_height="wrap_content"
+                        android:text="Join Date: 12/1/2023" />
+
+
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_deact_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/dark_green"
+                    android:text="Deactivation Date: 10/15/2024" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_reactivate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reactivate"
+                android:backgroundTint="@color/primary_green"
+                android:textColor="@android:color/white"
+                android:layout_marginLeft="12dp" />
+        </LinearLayout>
+
+        <!-- REASON BOX -->
+        <LinearLayout
+            android:id="@+id/reason_box"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:padding="12dp"
+            android:background="#FFF8D9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/reason_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_warning_yellow" />
+
+            <TextView
+                android:id="@+id/tv_reason"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dark_green"
+                android:text="Reason: Left hostel"
+                android:layout_marginLeft="12dp"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

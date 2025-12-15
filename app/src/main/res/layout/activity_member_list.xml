@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Member_List"
+    android:orientation="vertical"
+    android:background="@color/beige">
+
+    <!-- HEADER ROW -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Members List"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/dark_green"
+            android:paddingStart="12dp" />
+
+        <!-- Inactive Members Button -->
+        <TextView
+            android:id="@+id/btnViewInactive"
+            android:layout_width="190dp"
+            android:layout_height="32dp"
+            android:gravity="center"
+            android:text="View Inactive Members"
+            android:textColor="@color/dark_green"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:background="@drawable/btn_chip_bg"
+            android:layout_marginStart="12dp"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+
+    <!-- SUMMARY CARDS -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:orientation="horizontal"
+        android:background="@color/light_cream"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:padding="16dp">
+
+        <!-- Active Card -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/bg_card_gradient_green"
+            android:padding="14dp"
+            android:layout_marginEnd="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Active Members"
+                android:textSize="15sp"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/tvActiveCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="6dp" />
+        </LinearLayout>
+
+        <!-- Inactive Card -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/bg_card_gradient_pink"
+            android:padding="14dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inactive Members"
+                android:textSize="15sp"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/tvInactiveCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="6dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/soft_brown"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="NAME"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:paddingStart="8dp"
+            android:textColor="@color/dark_green"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="EMAIL"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:textColor="@color/dark_green"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:text="PHONE"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:textColor="@color/dark_green"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="JOIN DATE"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:paddingEnd="8dp"
+            android:textColor="@color/dark_green"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="ACTION"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:paddingEnd="8dp"
+            android:textColor="@color/dark_green"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="ACTIONS"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:paddingEnd="8dp"
+            android:textColor="@color/dark_green"/>
+    </LinearLayout>
+    <!-- ⭐ MEMBERS LIST VIEW -->
+    <ListView
+        android:id="@+id/listsActiveMembers"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="#CCCCCC"
+        android:dividerHeight="1dp"
+        android:background="@color/light_cream"
+        android:padding="8dp" />
+
+</LinearLayout>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Add_Expenses"
+    android:orientation="vertical"
+    android:background="@color/beige">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Add Expenses"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textColor="@color/dark_green"
+        android:background="@color/beige" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@color/light_cream"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Date*"
+            android:textStyle="bold"
+            android:textColor="@color/dark_green"
+            android:textSize="18sp"
+            android:layout_marginBottom="3dp"/>
+        <LinearLayout
+            android:id="@+id/date1Container"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/bg_round_box">
+
+            <!-- Left Calendar Icon -->
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@android:drawable/ic_menu_today"
+                app:tint="#7A7A7A"/>
+
+
+            <!-- Date Field -->
+            <EditText
+                android:id="@+id/etSelectDate"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="mm / dd / yyyy"
+                android:textSize="15sp"
+                android:background="@android:color/transparent"
+                android:focusable="false"
+                android:paddingStart="10dp" />
+
+            <!-- Right Calendar Icon -->
+            <ImageView
+                android:id="@+id/icOpenCalendar"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@android:drawable/ic_menu_today"
+                app:tint="#7A7A7A" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Category*"
+            android:textStyle="bold"
+            android:textColor="@color/dark_green"
+            android:layout_marginTop="15dp"
+            android:textSize="18sp"/>
+        <Spinner
+            android:id="@+id/memberSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:spinnerMode="dropdown"
+            android:layout_marginEnd="20dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Description*"
+            android:layout_marginTop="35dp"
+            android:textStyle="bold"
+            android:textColor="@color/dark_green"
+            android:textSize="18sp"/>
+        <EditText
+            android:id="@+id/etDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:padding="25dp"
+            android:inputType="text"
+            android:hint="Enter Expense Details"
+            android:maxHeight="50dp"
+            android:maxLength="40"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Amount*"
+            android:layout_marginTop="15dp"
+            android:textStyle="bold"
+            android:textColor="@color/dark_green"
+            android:textSize="18sp"/>
+        <EditText
+            android:id="@+id/etamount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:padding="10dp"
+            android:inputType="number"
+            android:hint="0.00"
+            android:maxHeight="48dp"
+            android:maxLength="40"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@color/beige">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category Guidelines"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:paddingBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Groceries: Food items, vegetables, meat, dairy products"
+                android:textSize="15sp"
+                android:paddingBottom="6dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Utilities: Electricity, water, gas, internet bills"
+                android:textSize="15sp"
+                android:paddingBottom="6dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Other: Cleaning supplies, kitchenware, miscellaneous"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnsignexit"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Cancel"
+            android:textColor="@color/dark_green"
+            android:backgroundTint="@color/soft_brown"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/btnsigngo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Save Expense"
+            android:textColor="@color/dark_green"
+            android:backgroundTint="@color/soft_brown"
+            android:textStyle="bold"/>
+    </LinearLayout>
+</LinearLayout>

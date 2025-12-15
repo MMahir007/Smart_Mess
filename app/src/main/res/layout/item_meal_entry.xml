@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:orientation="horizontal">
+    <TextView
+        android:id="@+id/tvname"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:text="Aishu Zaman"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:padding="2dp"/>
+    <TextView
+        android:id="@+id/tvBreakfast"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:text="Yes"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:padding="2dp"/>
+
+    <TextView
+        android:id="@+id/tvLunch"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:text="Yes"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:padding="2dp"/>
+    <TextView
+        android:id="@+id/tvDinner"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:text="No"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:padding="2dp"/>
+
+    <TextView
+        android:id="@+id/tvtotal"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:text="3"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:padding="2dp"/>
+</LinearLayout>

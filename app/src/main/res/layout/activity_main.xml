@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/main"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="@color/light_cream">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <!-- ScrollView must contain ONE root element -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp"
+                android:gravity="center_vertical">
+
+                <!-- App title -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:layout_weight="1"
+                    android:text="Smart Mess"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/dark_green" />
+
+                <!-- Notification bell with badge -->
+                <FrameLayout
+                    android:id="@+id/btnnotification"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bg_notification_box"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <!-- Bell icon -->
+                    <ImageView
+                        android:id="@+id/imgBell"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_bell_white" />
+
+                    <!-- Red badge -->
+                    <TextView
+                        android:id="@+id/tvNotificationCount"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_gravity="top|end"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/bg_notification_badge"
+                        android:padding="1dp" />
+                </FrameLayout>
+
+                <!-- Logout button -->
+                <Button
+                    android:id="@+id/btnLogout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:text="Logout"
+                    android:backgroundTint="@color/soft_brown"
+                    android:textColor="@color/white"
+                    android:paddingHorizontal="12dp"
+                    android:textAllCaps="false"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@color/beige"
+            android:padding="12dp"
+            android:layout_marginEnd="6dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Today's Meal"
+                android:textSize="12sp"
+                android:textColor="@color/dark_green" />
+
+            <TextView
+                android:id="@+id/todaymeal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_green"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+      
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@color/beige"
+            android:padding="12dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Expenses"
+                android:textSize="12sp"
+                android:textColor="@color/dark_green" />
+
+            <TextView
+                android:id="@+id/totalex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TK. 12,500"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/dark_green"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- Total Members -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@color/beige"
+            android:padding="12dp"
+            android:layout_marginStart="6dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Members"
+                android:textSize="12sp"
+                android:textColor="@color/dark_green" />
+
+            <TextView
+                android:id="@+id/totalmem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="24"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/dark_green"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Quick Actions Section -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Quick Actions"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/dark_green"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Quick Actions Grid -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/light_cream"
+        android:padding="6dp"
+        android:layout_marginBottom="16dp">
+
+        <!-- Row 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="6dp">
+
+            <!-- Meal Dashboard -->
+            <LinearLayout
+                android:id="@+id/MealD"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:background="@drawable/meal_dashboard_bg"
+                android:gravity="bottom|center_horizontal"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Meal Dashboard"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <!-- Members List -->
+            <LinearLayout
+                android:id="@+id/MemberList"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:background="@drawable/member_dasboard"
+                android:gravity="bottom|center_horizontal"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginStart="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Members List"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Row 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="6dp">
+
+            <!-- Expense List -->
+            <LinearLayout
+                android:id="@+id/ExpenseL"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:background="@drawable/expense_dasboard"
+                android:gravity="bottom|center_horizontal"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Expense List"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <!-- Meal History -->
+            <LinearLayout
+                android:id="@+id/MealH"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:background="@drawable/meal_h"
+                android:gravity="bottom|center_horizontal"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginStart="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Meal History"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Row 3 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Calculation Summary -->
+            <LinearLayout
+                android:id="@+id/CalculationB"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:background="@drawable/calculation_l"
+                android:gravity="bottom|center_horizontal"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Calculation Budget"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="1"
+                android:layout_margin="3dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Recent Activities Section -->
+
+
+    <LinearLayout
+        android:id="@+id/recentact"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@color/light_cream"
+        android:padding="12dp">
+        <TextView
+            android:id="@+id/tvrecent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recent Activities"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/dark_green"
+            android:layout_marginBottom="10dp" />
+        <!-- Activity 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:gravity="center"
+                android:text="🍽️"
+                android:textSize="12sp"
+                android:layout_marginEnd="10dp"
+                android:background="@color/primary_green" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="You added lunch meal"
+                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Just Now"
+                    android:textSize="10sp"
+                    android:textColor="@color/gray_500" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Activity 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:gravity="center"
+                android:text="💰"
+                android:textSize="12sp"
+                android:layout_marginEnd="10dp"
+                android:background="@color/primary_green" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Expenses Added: Grocery"
+                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10 min ago"
+                    android:textSize="10sp"
+                    android:textColor="@color/gray_500" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+
+
+
+
+
+    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

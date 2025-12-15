@@ -1,0 +1,5 @@
+<!-- res/drawable/bg_notification_badge.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:radius="9dp" />
+    <solid android:color="#234F1E"/> <!-- dark green or dark red -->
+</shape>

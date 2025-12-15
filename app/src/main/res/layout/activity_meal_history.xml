@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Add_Expenses"
+    android:orientation="vertical"
+    android:background="@color/beige">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Meal History"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textColor="@color/dark_green"
+        android:background="@color/beige" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@color/light_cream"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:padding="16dp">
+
+        <!-- Search Member (Admin Only) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@android:drawable/edit_text"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp">
+
+            <!-- Search Icon -->
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_menu_search"
+                app:tint="#7A7A7A"/>
+
+            <!-- Search Input -->
+            <EditText
+                android:id="@+id/etSearchMember"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="Search member name..."
+                android:textSize="15sp"
+                android:background="@android:color/transparent"
+                android:paddingStart="10dp" />
+        </LinearLayout>
+
+        <!-- Date Selector Box -->
+        <LinearLayout
+            android:id="@+id/dateContainer"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/bg_round_box">
+
+            <!-- Left Calendar Icon -->
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@android:drawable/ic_menu_today"
+                app:tint="#7A7A7A"/>
+
+
+            <!-- Date Field -->
+            <EditText
+                android:id="@+id/etSelectDate"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="mm / dd / yyyy"
+                android:textSize="15sp"
+                android:background="@android:color/transparent"
+                android:focusable="false"
+                android:paddingStart="10dp" />
+
+            <!-- Right Calendar Icon -->
+            <ImageView
+                android:id="@+id/icOpenCalendar"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@android:drawable/ic_menu_today"
+                app:tint="#7A7A7A" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/headerRows"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:orientation="horizontal"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:background="@color/soft_brown"
+            android:gravity="center_vertical"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="Member Name"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:paddingStart="8dp"
+                android:layout_marginEnd="7dp"
+                android:textColor="@color/dark_green"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="Breakfast"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:textColor="@color/dark_green"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="4"
+                android:layout_height="wrap_content"
+                android:text="Lunch"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:textColor="@color/dark_green"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="Dinner"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:paddingEnd="8dp"
+                android:textColor="@color/dark_green"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="Total"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:paddingEnd="8dp"
+                android:textColor="@color/dark_green"/>
+        </LinearLayout>
+
+        <!-- Expense list fills remaining space -->
+        <ListView
+            android:id="@+id/lvExpense"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/light_cream"
+            android:dividerHeight="1dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"/>
+
+    </LinearLayout>
+
+    </LinearLayout>

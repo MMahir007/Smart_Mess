@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/beige"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/beige"
+                android:gravity="center"
+                android:text="Log In"
+                android:textColor="@color/dark_green"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="30dp"
+                android:background="@color/light_cream"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="20dp"
+                    android:contentDescription="App Logo"
+                    android:src="@drawable/logo" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="Welcome Back!"
+                    android:textColor="@color/dark_green"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="40dp"
+                    android:gravity="center"
+                    android:text="Sign in to access your mess\ndashboard."
+                    android:textColor="@color/dark_green"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:id="@+id/btn_google_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/social_button_bg"
+                    android:backgroundTint="@color/dark_green"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_google" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="Continue with Google"
+                        android:textColor="@color/light_cream"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtGoToSignup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="Don't have an account? Sign Up"
+                    android:textColor="@color/primary_green"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtExitApp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:text="Exit App"
+                    android:textColor="@color/soft_brown"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
