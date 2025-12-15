@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "1062166616176",
+    "firebase_url": "https://smartmess-93786-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "smartmess-93786",
     "storage_bucket": "smartmess-93786.firebasestorage.app"
   },
@@ -12,7 +13,20 @@
           "package_name": "edu.ewubd.smartmessMN"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "1062166616176-j169ii7mv70u2s4tarh2r1nblpi0g2mq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.ewubd.smartmessMN",
+            "certificate_hash": "f49dcca9baa9b4101bbfa0137385464da3e08ac6"
+          }
+        },
+        {
+          "client_id": "1062166616176-criv9eul2aulqng682alhasl9pd3gphn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBQtXsXqa_U0cVD6bTurdiOu1h_PQGgDuc"
@@ -20,7 +34,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1062166616176-criv9eul2aulqng682alhasl9pd3gphn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

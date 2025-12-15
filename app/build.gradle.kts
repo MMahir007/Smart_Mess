@@ -42,6 +42,7 @@ dependencies {
     implementation(libs.firebase.database)
     implementation(libs.credentials)
     implementation(libs.credentials.play.services.auth)
+    implementation(libs.play.services.auth)
     implementation(libs.googleid)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
@@ -50,6 +51,7 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-auth")
     implementation("com.facebook.android:facebook-login:16.3.0")
+
     implementation(libs.credentials)
     implementation(libs.credentials.play.services.auth)
     implementation(libs.googleid)

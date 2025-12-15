@@ -15,9 +15,6 @@
             android:name=".row_meal"
             android:exported="false" />
         <activity
-            android:name=".MealEntryAdapter"
-            android:exported="false" />
-        <activity
             android:name=".Calculation_Summary"
             android:exported="false" />
         <activity
@@ -25,9 +22,6 @@
             android:exported="false" />
         <activity
             android:name=".Add_Meal"
-            android:exported="false" />
-        <activity
-            android:name=".Meal_Dashboard"
             android:exported="false" />
         <activity
             android:name=".Meal_Dashboard"
@@ -42,7 +36,7 @@
             android:name=".Expense_List"
             android:exported="false" />
         <activity
-            android:name=".LogIn"
+            android:name=".Login"
             android:exported="false" />
         <activity
             android:name=".SignUp"
