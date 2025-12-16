@@ -28,7 +28,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Random;
 
@@ -64,28 +67,24 @@ public class SignUp extends AppCompatActivity {
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
-        // 1. Initial UI State (Button always visible, Input visible)
+        // 1. Initial UI State
         btnGoogleSignUp.setVisibility(View.VISIBLE);
 
         // 2. Checkbox Listener
         cbManager.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
-                // Manager: Hide Mess Code input (System generates it)
                 etMessCode.setVisibility(View.GONE);
-                etMessCode.setText(""); // Clear text
+                etMessCode.setText("");
             } else {
-                // Member: Show Mess Code input
                 etMessCode.setVisibility(View.VISIBLE);
             }
         });
 
-        // 3. Button Click Listener (Validation Logic)
+        // 3. Button Click Listener
         btnGoogleSignUp.setOnClickListener(v -> {
             if (cbManager.isChecked()) {
-                // Manager flow: No validation needed, just sign in
                 signIn();
             } else {
-                // Member flow: MUST validate Mess Code first
                 String code = etMessCode.getText().toString().trim();
                 if (code.isEmpty()) {
                     etMessCode.setError("Please enter the Mess Code");
@@ -94,7 +93,6 @@ public class SignUp extends AppCompatActivity {
                     etMessCode.setError("Mess ID must be 6 digits");
                     etMessCode.requestFocus();
                 } else {
-                    // Valid input, now we can go to Google
                     signIn();
                 }
             }
@@ -130,7 +128,6 @@ public class SignUp extends AppCompatActivity {
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
-                        // Sign In Success! Now handle the Database logic
                         processUserRegistration(mAuth.getCurrentUser());
                     } else {
                         Toast.makeText(this, "Authentication Failed", Toast.LENGTH_SHORT).show();
@@ -139,7 +136,7 @@ public class SignUp extends AppCompatActivity {
     }
 
     // ---------------------------------------------------
-    //         REALTIME DATABASE LOGIC
+    //         REALTIME DATABASE LOGIC (UPDATED)
     // ---------------------------------------------------
 
     private void processUserRegistration(FirebaseUser user) {
@@ -147,19 +144,28 @@ public class SignUp extends AppCompatActivity {
         String uid = user.getUid();
         String email = user.getEmail();
 
-        if (isManager) {
-            // --- MANAGER: Generate ID & Create Mess ---
-            String newMessId = generateNumericCode();
+        // 1. Get Name from Google Account
+        String name = user.getDisplayName();
+        if (name == null || name.isEmpty()) {
+            name = "No Name";
+        }
 
-            // Check if ID exists (Safety)
+        // 2. Generate Current Date
+        String joinDate = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(new Date());
+
+        if (isManager) {
+            // --- MANAGER FLOW ---
+            String newMessId = generateNumericCode();
+            String finalName = name; // Need final for inner class usage
+
             mDatabase.child("mess").child(newMessId).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     if (snapshot.exists()) {
-                        // ID Collision (Rare), try again
-                        processUserRegistration(user);
+                        processUserRegistration(user); // ID Collision retry
                     } else {
-                        createMessAndManager(uid, email, newMessId);
+                        // Pass name and joinDate to helper method
+                        createMessAndManager(uid, email, newMessId, finalName, joinDate);
                     }
                 }
                 @Override
@@ -169,22 +175,20 @@ public class SignUp extends AppCompatActivity {
             });
 
         } else {
-            // --- MEMBER: Join Existing Mess ---
+            // --- MEMBER FLOW ---
             String inputMessId = etMessCode.getText().toString().trim();
-
-            // Double check input (it should be there from before Google Sign In)
             if (inputMessId.isEmpty()) {
                 failRegistration("Mess Code missing. Please try again.");
                 return;
             }
+            String finalName = name;
 
-            // Verify Mess Exists in DB
             mDatabase.child("mess").child(inputMessId).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     if (snapshot.exists()) {
-                        // SUCCESS: Mess found. Add this user's UID to the members list.
-                        joinMessAndCreateMember(uid, email, inputMessId);
+                        // Pass name and joinDate to helper method
+                        joinMessAndCreateMember(uid, email, inputMessId, finalName, joinDate);
                     } else {
                         failRegistration("Mess Code not found! Ask your manager.");
                     }
@@ -203,43 +207,43 @@ public class SignUp extends AppCompatActivity {
         return String.format("%06d", number);
     }
 
-    // --- MANAGER LOGIC ---
-    private void createMessAndManager(String uid, String email, String messId) {
+    // --- MANAGER HELPER (UPDATED) ---
+    private void createMessAndManager(String uid, String email, String messId, String name, String joinDate) {
         Map<String, Object> messData = new HashMap<>();
         messData.put("managerUid", uid);
         messData.put("createdAt", System.currentTimeMillis());
 
-        // Add Manager to members list
-        // Path: mess/{messId}/members/{uid} = "Manager"
         Map<String, String> members = new HashMap<>();
         members.put(uid, "Manager");
         messData.put("members", members);
 
         mDatabase.child("mess").child(messId).setValue(messData)
-                .addOnSuccessListener(aVoid -> saveUserProfile(uid, email, messId, "Manager"))
+                .addOnSuccessListener(aVoid -> saveUserProfile(uid, email, messId, "Manager", name, joinDate))
                 .addOnFailureListener(e -> failRegistration("Failed to create mess."));
     }
 
-    // --- MEMBER LOGIC ---
-    private void joinMessAndCreateMember(String uid, String email, String messId) {
-        // This adds the new member's UID to the Mess Node
-        // Path: mess/{messId}/members/{uid} = "Member"
+    // --- MEMBER HELPER (UPDATED) ---
+    private void joinMessAndCreateMember(String uid, String email, String messId, String name, String joinDate) {
         mDatabase.child("mess").child(messId).child("members").child(uid).setValue("Member")
-                .addOnSuccessListener(aVoid -> saveUserProfile(uid, email, messId, "Member"))
+                .addOnSuccessListener(aVoid -> saveUserProfile(uid, email, messId, "Member", name, joinDate))
                 .addOnFailureListener(e -> failRegistration("Failed to join mess."));
     }
 
-    // --- SAVE USER PROFILE ---
-    private void saveUserProfile(String uid, String email, String messId, String role) {
+    // --- SAVE USER PROFILE (UPDATED) ---
+    // Now accepts name and joinDate
+    private void saveUserProfile(String uid, String email, String messId, String role, String name, String joinDate) {
         Map<String, Object> userData = new HashMap<>();
         userData.put("uid", uid);
         userData.put("email", email);
         userData.put("role", role);
         userData.put("messCode", messId);
+        userData.put("name", name);         // Added Name
+        userData.put("joinDate", joinDate); // Added Join Date
+        userData.put("phone", "");          // Placeholder for phone (optional)
 
         mDatabase.child("users").child(uid).setValue(userData)
                 .addOnSuccessListener(v -> {
-                    Toast.makeText(this, "Success! Mess ID: " + messId, Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Success! Welcome " + name, Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(SignUp.this, MainActivity.class);
                     intent.putExtra("role", role);
                     startActivity(intent);
@@ -249,7 +253,7 @@ public class SignUp extends AppCompatActivity {
     }
 
     private void failRegistration(String errorMsg) {
-        mAuth.signOut(); // Undo the Google Auth because the app logic failed
+        mAuth.signOut();
         Toast.makeText(this, errorMsg, Toast.LENGTH_LONG).show();
     }
 }

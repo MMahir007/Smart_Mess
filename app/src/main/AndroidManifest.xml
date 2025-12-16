@@ -12,7 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartMess">
         <activity
-            android:name=".row_meal"
+            android:name=".row_expense_list"
+            android:exported="false" />
+        <activity
+            android:name=".row_member_list"
+            android:exported="false" />
+        <activity
+            android:name=".MealHistoryItem"
             android:exported="false" />
         <activity
             android:name=".Calculation_Summary"

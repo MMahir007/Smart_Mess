@@ -1,456 +1,437 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
     android:id="@+id/main"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="12dp"
-    android:background="@color/light_cream">
+    android:background="#F8F9F0"
+    android:orientation="vertical">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
 
-        <!-- ScrollView must contain ONE root element -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="SmartMess"
+                    android:textColor="#000000"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/btn_notification"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="5dp"
+                    android:src="@android:drawable/ic_popup_reminder"
+                    android:tint="#000000"
+                    android:contentDescription="Notifications" />
+
+                <ImageView
+                    android:id="@+id/btn_logout"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="5dp"
+                    android:src="@android:drawable/ic_lock_power_off"
+                    android:tint="#C62828"
+                    android:contentDescription="Logout" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_menu_summary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_round_box"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Today's Menu"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_current_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dec 16, 2025"
+                        android:textColor="#555555"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Breakfast"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_menu_breakfast"
+                        android:layout_width="120dp"
+                        android:layout_height="30dp"
+                        android:background="#DCDCDC"
+                        android:gravity="center"
+                        android:text="Set Menu 1"
+                        android:textColor="#000000"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Lunch"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_menu_lunch"
+                        android:layout_width="120dp"
+                        android:layout_height="30dp"
+                        android:background="#DCDCDC"
+                        android:gravity="center"
+                        android:text="Set Menu 2"
+                        android:textColor="#000000"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Dinner"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_menu_dinner"
+                        android:layout_width="120dp"
+                        android:layout_height="30dp"
+                        android:background="#DCDCDC"
+                        android:gravity="center"
+                        android:text="Set Menu 3"
+                        android:textColor="#000000"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="15dp"
+                android:text="Quick Action"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginBottom="20dp"
-                android:gravity="center_vertical">
+                android:weightSum="4">
 
-                <!-- App title -->
+                <LinearLayout
+                    android:id="@+id/btn_add_meal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/fingerprint_dialog_fp_icon"
+                        android:padding="12dp"
+                        android:src="@drawable/ic_launcher_foreground" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Add Meal"
+                        android:textColor="#4CAF50"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btn_action_expenses"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/fingerprint_dialog_fp_icon"
+                        android:padding="12dp"
+                        android:src="@drawable/ic_launcher_foreground" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Expenses"
+                        android:textColor="#4CAF50"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btn_action_members"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/fingerprint_dialog_fp_icon"
+                        android:padding="12dp"
+                        android:src="@drawable/ic_launcher_foreground" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Members"
+                        android:textColor="#4CAF50"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btn_checklist"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/fingerprint_dialog_fp_icon"
+                        android:padding="12dp"
+                        android:src="@drawable/ic_launcher_foreground" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Checklist"
+                        android:textColor="#4CAF50"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="15dp"
+                android:text="Meal Entry"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="#E0F2D0"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/ic_launcher_foreground" />
+
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_height="24dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Smart Mess"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/dark_green" />
+                    android:text="Breakfast"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
-                <!-- Notification bell with badge -->
-                <FrameLayout
-                    android:id="@+id/btnnotification"
-                    android:layout_width="40dp"
+                <EditText
+                    android:id="@+id/et_breakfast"
+                    android:layout_width="100dp"
                     android:layout_height="40dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/bg_notification_box"
-                    android:clickable="true"
-                    android:focusable="true">
-
-                    <!-- Bell icon -->
-                    <ImageView
-                        android:id="@+id/imgBell"
-                        android:layout_width="22dp"
-                        android:layout_height="22dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/ic_bell_white" />
-
-                    <!-- Red badge -->
-                    <TextView
-                        android:id="@+id/tvNotificationCount"
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:layout_gravity="top|end"
-                        android:gravity="center"
-                        android:text="1"
-                        android:textSize="10sp"
-                        android:textColor="@color/white"
-                        android:background="@drawable/bg_notification_badge"
-                        android:padding="1dp" />
-                </FrameLayout>
-
-                <!-- Logout button -->
-                <Button
-                    android:id="@+id/btnLogout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:text="Logout"
-                    android:backgroundTint="@color/soft_brown"
-                    android:textColor="@color/white"
-                    android:paddingHorizontal="12dp"
-                    android:textAllCaps="false"
-                    android:textSize="10sp" />
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:hint="Qty"
+                    android:inputType="numberDecimal"
+                    android:padding="5dp"
+                    android:textSize="14sp" />
             </LinearLayout>
 
-
-
-
             <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="16dp">
-
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:background="@color/beige"
-            android:padding="12dp"
-            android:layout_marginEnd="6dp"
-            android:gravity="center">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Today's Meal"
-                android:textSize="12sp"
-                android:textColor="@color/dark_green" />
-
-            <TextView
-                android:id="@+id/todaymeal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="12"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="@color/primary_green"
-                android:layout_marginTop="4dp" />
-        </LinearLayout>
-
-      
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:background="@color/beige"
-            android:padding="12dp"
-            android:layout_marginStart="6dp"
-            android:layout_marginEnd="6dp"
-            android:gravity="center">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Total Expenses"
-                android:textSize="12sp"
-                android:textColor="@color/dark_green" />
-
-            <TextView
-                android:id="@+id/totalex"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TK. 12,500"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="@color/dark_green"
-                android:layout_marginTop="4dp" />
-        </LinearLayout>
-
-        <!-- Total Members -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:background="@color/beige"
-            android:padding="12dp"
-            android:layout_marginStart="6dp"
-            android:gravity="center">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Total Members"
-                android:textSize="12sp"
-                android:textColor="@color/dark_green" />
-
-            <TextView
-                android:id="@+id/totalmem"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="24"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="@color/dark_green"
-                android:layout_marginTop="4dp" />
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <!-- Quick Actions Section -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Quick Actions"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:textColor="@color/dark_green"
-        android:layout_marginBottom="8dp" />
-
-    <!-- Quick Actions Grid -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@color/light_cream"
-        android:padding="6dp"
-        android:layout_marginBottom="16dp">
-
-        <!-- Row 1 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="6dp">
-
-            <!-- Meal Dashboard -->
-            <LinearLayout
-                android:id="@+id/MealD"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="10dp"
-                android:background="@drawable/meal_dashboard_bg"
-                android:gravity="bottom|center_horizontal"
-                android:clickable="true"
-                android:focusable="true">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Meal Dashboard"
-                    android:textSize="11sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/white" />
-
-            </LinearLayout>
-
-            <!-- Members List -->
-            <LinearLayout
-                android:id="@+id/MemberList"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="10dp"
-                android:background="@drawable/member_dasboard"
-                android:gravity="bottom|center_horizontal"
-                android:clickable="true"
-                android:focusable="true"
-                android:layout_marginStart="5dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Members List"
-                    android:textColor="@color/white"
-                    android:textSize="11sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <!-- Row 2 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="6dp">
-
-            <!-- Expense List -->
-            <LinearLayout
-                android:id="@+id/ExpenseL"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="10dp"
-                android:background="@drawable/expense_dasboard"
-                android:gravity="bottom|center_horizontal"
-                android:clickable="true"
-                android:focusable="true">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Expense List"
-                    android:textSize="11sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/white" />
-            </LinearLayout>
-
-            <!-- Meal History -->
-            <LinearLayout
-                android:id="@+id/MealH"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="10dp"
-                android:background="@drawable/meal_h"
-                android:gravity="bottom|center_horizontal"
-                android:clickable="true"
-                android:focusable="true"
-                android:layout_marginStart="5dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Meal History"
-                    android:textColor="@color/white"
-                    android:textSize="11sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <!-- Row 3 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <!-- Calculation Summary -->
-            <LinearLayout
-                android:id="@+id/CalculationB"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:orientation="vertical"
-                android:padding="10dp"
-                android:background="@drawable/calculation_l"
-                android:gravity="bottom|center_horizontal"
-                android:clickable="true"
-                android:focusable="true">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Calculation Budget"
-                    android:textSize="11sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/white" />
-            </LinearLayout>
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="80dp"
-                android:layout_weight="1"
-                android:layout_margin="3dp" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <!-- Recent Activities Section -->
-
-
-    <LinearLayout
-        android:id="@+id/recentact"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:background="@color/light_cream"
-        android:padding="12dp">
-        <TextView
-            android:id="@+id/tvrecent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Recent Activities"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="@color/dark_green"
-            android:layout_marginBottom="10dp" />
-        <!-- Activity 1 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="8dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="8dp"
-            android:gravity="center_vertical">
-
-            <TextView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:gravity="center"
-                android:text="🍽️"
-                android:textSize="12sp"
-                android:layout_marginEnd="10dp"
-                android:background="@color/primary_green" />
-
-            <LinearLayout
-                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:layout_marginBottom="10dp"
+                android:background="#E0F2D0"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/ic_launcher_foreground" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="You added lunch meal"
-                    android:textSize="12sp"
-                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:text="Lunch"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Just Now"
-                    android:textSize="10sp"
-                    android:textColor="@color/gray_500" />
+                <EditText
+                    android:id="@+id/et_lunch"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:hint="Qty"
+                    android:inputType="numberDecimal"
+                    android:padding="5dp"
+                    android:textSize="14sp" />
             </LinearLayout>
-        </LinearLayout>
-
-        <!-- Activity 2 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="8dp"
-            android:layout_marginBottom="8dp"
-            android:gravity="center_vertical">
-
-            <TextView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:gravity="center"
-                android:text="💰"
-                android:textSize="12sp"
-                android:layout_marginEnd="10dp"
-                android:background="@color/primary_green" />
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:layout_marginBottom="10dp"
+                android:background="#E0F2D0"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/ic_launcher_foreground" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Expenses Added: Grocery"
-                    android:textSize="12sp"
-                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:text="Dinner"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="10 min ago"
-                    android:textSize="10sp"
-                    android:textColor="@color/gray_500" />
+                <EditText
+                    android:id="@+id/et_dinner"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:hint="Qty"
+                    android:inputType="numberDecimal"
+                    android:padding="5dp"
+                    android:textSize="14sp" />
             </LinearLayout>
-        </LinearLayout>
 
+            <Button
+                android:id="@+id/btn_confirm_meal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#4CAF50"
+                android:text="Confirm Meal Entry"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-
-
-
-
-
-
-    </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

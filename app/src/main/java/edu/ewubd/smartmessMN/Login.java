@@ -35,7 +35,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_log_in); // Ensure matches your XML name
+        setContentView(R.layout.activity_login); // Ensure matches your XML name
 
         // 1. Initialize Firebase
         mAuth = FirebaseAuth.getInstance();

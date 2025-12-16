@@ -1,203 +1,399 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Expense_List"
-    android:orientation="vertical"
-    android:background="@color/beige">
+    android:background="#F8F9F0"
+    android:fillViewport="true">
 
-    <!-- Light cream box containing title + add button (wrap_content so it doesn't expand) -->
     <LinearLayout
-        android:id="@+id/headerBoxs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@color/light_cream"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:padding="10dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp">
+        android:padding="20dp">
 
-        <!-- Row: Expense List label + Add button aligned right -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
+            android:layout_marginBottom="20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/tvList"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Expense List"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/dark_green" />
+                android:text="SmartMess"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                android:textStyle="bold" />
 
             <Button
-                android:id="@+id/btnAddExpenses"
+                android:id="@+id/btn_add_expense"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
+                android:backgroundTint="#4CAF50"
                 android:text="+ Add Expense"
-                android:paddingLeft="12dp"
-                android:paddingRight="12dp"
-                android:backgroundTint="@color/orange_700"
-                android:textColor="@color/dark_green"/>
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
         </LinearLayout>
 
-    </LinearLayout>
-
-    <!-- Total expenses band -->
-    <LinearLayout
-        android:id="@+id/totalBands"
-        android:layout_width="match_parent"
-        android:layout_height="96dp"
-        android:orientation="horizontal"
-        android:padding="12dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@color/orange_700"
-        android:gravity="center_vertical">
-
-        <!-- Left texts -->
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/bg_round_box"
+            android:backgroundTint="#E0F2D0"
             android:orientation="vertical"
-            android:gravity="center_vertical|start">
+            android:padding="20dp">
 
-            <TextView
-                android:id="@+id/tvTotalExpense"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Total Expenses"
-                android:textSize="14sp"
-                android:textColor="@color/dark_green" />
+                android:layout_marginBottom="15dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/tvTotalAmounts"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Your Balance"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_balance_amount"
+                    android:layout_width="120dp"
+                    android:layout_height="35dp"
+                    android:background="#DCDCDC"
+                    android:gravity="center"
+                    android:text="TK. -1800"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="BDT 0"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                android:layout_marginTop="6dp"
-                android:textColor="@color/dark_green"/>
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Due Date"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_due_date"
+                    android:layout_width="120dp"
+                    android:layout_height="35dp"
+                    android:background="#DCDCDC"
+                    android:gravity="center"
+                    android:text="D:2 H:07.15"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+            </LinearLayout>
         </LinearLayout>
 
-        <!-- Right icon box -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:text="Bills"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
         <LinearLayout
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:background="@color/orange_700"
-            android:layout_marginStart="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Home Rent"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/et_bill_rent"
+                    android:layout_width="140dp"
+                    android:layout_height="35dp"
+                    android:background="#E0F2D0"
+                    android:gravity="center"
+                    android:inputType="numberDecimal"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Electric Bill"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/et_bill_electric"
+                    android:layout_width="140dp"
+                    android:layout_height="35dp"
+                    android:background="#E0F2D0"
+                    android:inputType="numberDecimal"
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Gas Bill"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/et_bill_gas"
+                    android:layout_width="140dp"
+                    android:layout_height="35dp"
+                    android:background="#E0F2D0"
+                    android:gravity="center"
+                    android:inputType="numberDecimal"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Water Bill"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/et_bill_water"
+                    android:layout_width="140dp"
+                    android:layout_height="35dp"
+                    android:background="#E0F2D0"
+                    android:inputType="numberDecimal"
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Utility"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/et_bill_utility"
+                    android:layout_width="140dp"
+                    android:layout_height="35dp"
+                    android:background="#E0F2D0"
+                    android:gravity="center"
+                    android:inputType="numberDecimal"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Internet"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/et_bill_internet"
+                    android:layout_width="140dp"
+                    android:layout_height="35dp"
+                    android:background="#E0F2D0"
+                    android:gravity="center"
+                    android:inputType="numberDecimal"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Grocery Items"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#D3D3D3"
+            android:orientation="horizontal"
             android:padding="8dp">
 
             <TextView
-                android:id="@+id/tvMoneyIcons"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="BDT"
-                android:textColor="@color/dark_green"
-                android:textSize="20sp" />
+                android:layout_weight="1"
+                android:text="User"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:text="Item"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Date"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="Amount"
+                android:textColor="#000000"
+                android:textStyle="bold" />
         </LinearLayout>
-    </LinearLayout>
 
-    <!-- Filter / Category selector row -->
-    <LinearLayout
-        android:id="@+id/filterRows"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp">
+        <ListView
+            android:id="@+id/lv_grocery_items"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="20dp"
+            android:divider="@null"
+            android:dividerHeight="0dp" />
 
-        <Spinner
-            android:id="@+id/categoriesSpinner"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Other Expenses"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:spinnerMode="dropdown"/>
+            android:background="#D3D3D3"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="User"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:text="Item"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Date"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="Amount"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/lv_other_items"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:divider="@null"
+            android:dividerHeight="0dp" />
+
     </LinearLayout>
-
-    <!-- Header row for list columns -->
-    <LinearLayout
-        android:id="@+id/headerRows"
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:orientation="horizontal"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
-        android:background="@color/soft_brown"
-        android:gravity="center_vertical"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="2"
-            android:layout_height="wrap_content"
-            android:text="Date"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:textSize="12sp"
-            android:paddingStart="8dp"
-            android:textColor="@color/dark_green"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="2"
-            android:layout_height="wrap_content"
-            android:text="Category"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:textSize="12sp"
-            android:textColor="@color/dark_green"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="4"
-            android:layout_height="wrap_content"
-            android:text="Description"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:textSize="12sp"
-            android:textColor="@color/dark_green"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="2"
-            android:layout_height="wrap_content"
-            android:text="Amount"
-            android:textStyle="bold"
-            android:textSize="12sp"
-            android:gravity="center"
-            android:paddingEnd="8dp"
-            android:textColor="@color/dark_green"/>
-    </LinearLayout>
-
-    <!-- Expense list fills remaining space -->
-    <ListView
-        android:id="@+id/lvExpense"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@color/light_cream"
-        android:dividerHeight="1dp"
-        android:paddingTop="4dp"
-        android:paddingBottom="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"/>
-
-</LinearLayout>
+</ScrollView>

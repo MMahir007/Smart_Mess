@@ -3,4 +3,14 @@
     <string name="default_web_client_id">
         110600425012-7hhd2ili2f7t706cijg25jgseujqvn57.apps.googleusercontent.com
     </string>
+
+    <string-array name="bill_types">
+        <item>Home Rent</item>
+        <item>Electric Bill</item>
+        <item>Gas Bill</item>
+        <item>Water Bill</item>
+        <item>Utility</item>
+        <item>Internet</item>
+    </string-array>
 </resources>
+

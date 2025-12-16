@@ -5,10 +5,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Add_Expenses"
+    tools:context=".Meal_History"
     android:orientation="vertical"
     android:background="@color/beige">
-
 
     <TextView
         android:layout_width="match_parent"
@@ -19,6 +18,7 @@
         android:gravity="center"
         android:textColor="@color/dark_green"
         android:background="@color/beige" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -29,7 +29,6 @@
         android:layout_marginRight="8dp"
         android:padding="16dp">
 
-        <!-- Search Member (Admin Only) -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="48dp"
@@ -39,14 +38,12 @@
             android:paddingStart="12dp"
             android:paddingEnd="12dp">
 
-            <!-- Search Icon -->
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@android:drawable/ic_menu_search"
                 app:tint="#7A7A7A"/>
 
-            <!-- Search Input -->
             <EditText
                 android:id="@+id/etSearchMember"
                 android:layout_width="0dp"
@@ -58,7 +55,6 @@
                 android:paddingStart="10dp" />
         </LinearLayout>
 
-        <!-- Date Selector Box -->
         <LinearLayout
             android:id="@+id/dateContainer"
             android:layout_width="match_parent"
@@ -70,15 +66,12 @@
             android:layout_marginBottom="30dp"
             android:background="@drawable/bg_round_box">
 
-            <!-- Left Calendar Icon -->
             <ImageView
                 android:layout_width="22dp"
                 android:layout_height="22dp"
                 android:src="@android:drawable/ic_menu_today"
                 app:tint="#7A7A7A"/>
 
-
-            <!-- Date Field -->
             <EditText
                 android:id="@+id/etSelectDate"
                 android:layout_width="0dp"
@@ -90,14 +83,12 @@
                 android:focusable="false"
                 android:paddingStart="10dp" />
 
-            <!-- Right Calendar Icon -->
             <ImageView
                 android:id="@+id/icOpenCalendar"
                 android:layout_width="22dp"
                 android:layout_height="22dp"
                 android:src="@android:drawable/ic_menu_today"
                 app:tint="#7A7A7A" />
-
         </LinearLayout>
 
         <LinearLayout
@@ -114,31 +105,20 @@
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_weight="2"
+                android:layout_weight="5"
                 android:layout_height="wrap_content"
                 android:text="Member Name"
-                android:gravity="center"
+                android:gravity="center_vertical"
                 android:textStyle="bold"
                 android:textSize="12sp"
                 android:paddingStart="8dp"
-                android:layout_marginEnd="7dp"
                 android:textColor="@color/dark_green"/>
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="Breakfast"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:textSize="12sp"
-                android:textColor="@color/dark_green"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="4"
-                android:layout_height="wrap_content"
-                android:text="Lunch"
+                android:text="B"
                 android:gravity="center"
                 android:textStyle="bold"
                 android:textSize="12sp"
@@ -146,27 +126,36 @@
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="Dinner"
+                android:text="L"
+                android:gravity="center"
                 android:textStyle="bold"
                 android:textSize="12sp"
-                android:gravity="center"
-                android:paddingEnd="8dp"
                 android:textColor="@color/dark_green"/>
+
             <TextView
                 android:layout_width="0dp"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="Total"
+                android:text="D"
                 android:textStyle="bold"
                 android:textSize="12sp"
                 android:gravity="center"
-                android:paddingEnd="8dp"
+                android:textColor="@color/dark_green"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Tot"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:paddingEnd="4dp"
                 android:textColor="@color/dark_green"/>
         </LinearLayout>
 
-        <!-- Expense list fills remaining space -->
         <ListView
             android:id="@+id/lvExpense"
             android:layout_width="match_parent"
@@ -180,5 +169,4 @@
             android:layout_marginEnd="8dp"/>
 
     </LinearLayout>
-
-    </LinearLayout>
+</LinearLayout>
