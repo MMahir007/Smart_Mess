@@ -18,19 +18,11 @@
             android:name=".row_member_list"
             android:exported="false" />
         <activity
-            android:name=".MealHistoryItem"
+            android:name=".row_meal"
             android:exported="false" />
-        <activity
-            android:name=".Calculation_Summary"
-            android:exported="false" />
+
         <activity
             android:name=".Member_List"
-            android:exported="false" />
-        <activity
-            android:name=".Add_Meal"
-            android:exported="false" />
-        <activity
-            android:name=".Meal_Dashboard"
             android:exported="false" />
         <activity
             android:name=".Meal_History"
@@ -46,9 +38,6 @@
             android:exported="false" />
         <activity
             android:name=".SignUp"
-            android:exported="false" />
-        <activity
-            android:name=".PreSignUp"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
